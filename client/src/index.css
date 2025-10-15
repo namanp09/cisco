@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+:root {
+  --background-color: #E8F5E9; /* Light green background */
+  --card-background-color: #FFFFFF;
+  --primary-accent-color: #2E7D32; /* Deep Emerald Green */
+  --main-text-color: #1F2937; /* Dark Charcoal Gray */
+  --secondary-text-color: #6B7280; /* Soft Gray */
+  --border-color: #C8E6C9; /* Lighter green border */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--main-text-color);
+  line-height: 1.6;
+  background-image: url('/green.jpg'); /* User-provided background image */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#root {
+  padding: 0;
+}
+
+.full-screen-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  padding: 1rem; /* Add back some padding for content */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white overlay for readability */
+}
+
+/* AuthPage Specific Styles */
+.auth-page-title {
+  font-family: 'Poppins', sans-serif; /* Use Poppins for title */
+  font-size: 48px; /* Larger for prominence */
+  font-weight: 800; /* Extra bold */
+  color: var(--main-text-color); /* Dark Charcoal */
+  letter-spacing: 2px; /* Ample letter spacing */
+  margin-bottom: 15px;
+}
+
+.auth-page-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400; /* Lighter weight */
+  color: var(--secondary-text-color); /* Soft Gray */
+  line-height: 1.5;
+  max-width: 500px;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Take full width within its flex container */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.auth-page-button {
+  padding: 15px 40px;
+  border-radius: 10px;
+  background-color: var(--primary-accent-color); /* Deep Emerald Green */
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3); /* Soft drop shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.auth-page-button:hover {
+  background-color: #388E3C; /* Slightly darker green on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.4);
+}
+
+.auth-page-signup-link {
+  font-size: 15px;
+  color: var(--secondary-text-color);
+  margin-top: 25px;
+}
+
+.auth-page-signup-link button {
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--primary-accent-color); /* Deep Emerald Green */
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.auth-page-signup-link button:hover {
+  color: #388E3C;
+  text-decoration: none;
+  transform: none;
+}
+
+/* General Styles (from previous setup, adjusted for new theme) */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--main-text-color);
+}
+
+h1 {
+  font-size: 36px; /* Main Heading */
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 24px; /* Sub-headings */
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+p {
+  color: var(--secondary-text-color);
+}
+
+button {
+  cursor: pointer;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-accent-color);
+  color: #FFFFFF; /* Button text */
+  font-size: 16px; /* Button text */
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 8px;
+  box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+button:hover {
+  background-color: #388E3C; /* Lighter shade of primary */
+  transform: translateY(-2px);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0 16px 0;
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px; /* Input field text */
+  color: var(--main-text-color);
+  background-color: var(--card-background-color);
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: var(--primary-accent-color);
+  outline: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--primary-accent-color);
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: var(--secondary-text-color);
+  margin-bottom: 4px;
+}
+
+form {
+    background: var(--card-background-color);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px var(--shadow-light);
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: var(--card-background-color);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+a {
+    color: var(--primary-accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #388E3C;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--card-background-color); /* Opaque white card */
+    border-radius: 16px;
+    box-shadow: 0px 8px 20px var(--shadow-light);
+}
+
+.header {
+    background-color: var(--card-background-color);
+    padding: 15px 30px;
+    box-shadow: 0 1px 5px var(--shadow-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    border-bottom: 1px solid var(--border-color); /* Subtle bottom border */
+}
+
+.header .logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo-section img {
+  height: 30px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.header a {
+    color: var(--main-text-color); /* Navbar Title */
+    font-size: 24px; /* Navbar Title */
+    font-weight: 700; /* Navbar Title */
+    text-shadow: none; /* Remove glow/blur */
+}
+
+.user-button-container .cl-userButtonBox {
+  background-color: var(--primary-accent-color); /* Solid primary color background */
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-red {
+    color: var(--accent-color);
+}
+
+.text-green {
+    color: #27ae60; /* Standard green for success */
+}
+
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.chevron-icon {
+  color: var(--secondary-text-color);
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.list-item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.list-item-content strong {
+  color: var(--main-text-color);
+  font-weight: 700;
+}
+
+.list-item-content span {
+  color: var(--secondary-text-color);
+  font-size: 14px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Lighter overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-background-color);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.modal-content h2 {
+    color: var(--main-text-color);
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.modal-content ul {
+    margin-top: 25px;
+}
+
+.modal-content li {
+    background: var(--background-color);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    color: var(--main-text-color);
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.modal-content button {
+    margin-top: 30px;
+    background-color: var(--primary-accent-color);
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    border: none;
+}
+
+.modal-content button:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+}
+
+.remove-member-icon {
+  background-color: transparent;
+  color: var(--secondary-text-color);
+  font-size: 1.2rem;
+  padding: 0 5px;
+  margin-left: 10px;
+  box-shadow: none;
+  transition: color 0.2s ease;
+  border: none; /* Ensure no border */
+}
+
+.remove-member-icon:hover {
+  color: var(--accent-color);
+  transform: none; /* Override button hover transform */
+}
+
+.group-list-item-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--main-text-color); /* Ensure link text color is main text color */
+}
+
+.group-list-item-link:hover {
+  text-decoration: none; /* Remove underline on hover for the whole link */
+}
+
+.form-field-with-button {
+  display: flex;
+  align-items: flex-end; /* Align button to the bottom of the input */
+  gap: 10px; /* Space between input and button */
+}
+
+.form-field-with-button input {
+  flex-grow: 1; /* Input takes up available space */
+  margin-bottom: 0; /* Remove bottom margin from input */
+}
+
+.form-field-with-button button {
+  margin-bottom: 0; /* Remove bottom margin from button */
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
